@@ -72,32 +72,44 @@ export default function TextForm(props) {
           }}
         ></textarea>
         <button
-          className="btn btn-primary mt-4 mx-2"
+          className="btn btn-primary mt-4 mx-2 my-1"
           onClick={handleClickEventUp}
+          disabled={text.length === 0}
         >
           Convert to UpperCase
         </button>
         <button
-          className="btn btn-primary mt-4 mx-2"
+          className="btn btn-primary mt-4 mx-2 my-1"
           onClick={handleClickEventLow}
+          disabled={text.length === 0}
         >
           Convert to LowerCase
         </button>
-        <button className="btn btn-primary mt-4 mx-2" onClick={handleClearText}>
+        <button
+          className="btn btn-primary mt-4 mx-2 my-1"
+          onClick={handleClearText}
+          disabled={text.length === 0}
+        >
           Clear Text
         </button>
         <button
-          className="btn btn-primary mt-4 mx-2"
+          className="btn btn-primary mt-4 mx-2 my-1"
           onClick={handleEmailExtract}
+          disabled={text.length === 0}
         >
           Email Extract
         </button>
-        <button className="btn btn-primary mt-4 mx-2" onClick={handleCopy}>
+        <button
+          className="btn btn-primary mt-4 mx-2 my-1"
+          onClick={handleCopy}
+          disabled={text.length === 0}
+        >
           Copy Text
         </button>
         <button
-          className="btn btn-primary mt-4 mx-2"
+          className="btn btn-primary mt-4 mx-2 my-1"
           onClick={handleRemoveExtraSpaces}
+          disabled={text.length === 0}
         >
           Remove Extra Spaces
         </button>
@@ -116,9 +128,7 @@ export default function TextForm(props) {
           are the minutes required to read this text.
         </p>
         <h2>Preview</h2>
-        <p>
-          {text.length > 0 ? text : "Enter the text in above to preview here"}
-        </p>
+        <p>{text.length > 0 ? text : "Nothing to preview here!"}</p>
       </div>
     </>
   );

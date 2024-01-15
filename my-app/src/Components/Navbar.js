@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 export default function Navbar(props) {
-  const myButtonStyle = {
-    width: 40,
-    height: 40,
-  };
+  // const myButtonStyle = {
+  //   width: 40,
+  //   height: 40,
+  // };
   return (
     <nav
       className={`navbar navbar-expand-lg bg-${props.mode} navbar-${props.mode} px-4`}
@@ -50,14 +50,14 @@ export default function Navbar(props) {
               Search
             </button>
           </form> */}
-          <button
+          {/* <button
             className={`btn btn-${
               props.mode === "success" ? "light" : "success"
             } rounded-circle mx-3`}
             style={myButtonStyle}
             type="submit"
             onClick={props.toggleMode2}
-          ></button>
+          ></button> */}
           <div
             className={`form-check form-switch text-${
               props.mode === "light" ? "dark" : "light"

@@ -31,13 +31,13 @@ function App() {
     }
   };
 
-  const handletoggleMode2 = () => {
-    if (mode === "light" || mode === "dark") {
-      setMode("success");
-      document.body.style.backgroundColor = "#1d764c";
-      showAlert("Green mode has been activated successfully", "success");
-    }
-  };
+  // const handletoggleMode2 = () => {
+  //   if (mode === "light" || mode === "dark") {
+  //     setMode("success");
+  //     document.body.style.backgroundColor = "#1d764c";
+  //     showAlert("Green mode has been activated successfully", "success");
+  //   }
+  // };
 
   return (
     <>
@@ -47,12 +47,15 @@ function App() {
           about_text="About TextUtils"
           mode={mode}
           toggleMode={handletoggleMode}
-          toggleMode2={handletoggleMode2}
         />
         <div className="container my-3">
           <Alert alert={alert} />
           <Routes>
-            <Route exact path="/about" element={<AboutUs />}></Route>
+            <Route
+              exact
+              path="/about"
+              element={<AboutUs mode={mode} />}
+            ></Route>
             <Route
               exact
               path="/home"
